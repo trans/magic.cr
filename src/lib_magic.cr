@@ -1,3 +1,8 @@
+# Raw Crystal binding to libmagic.
+#
+# This `lib` maps directly to the C API declared by `magic.h`. Prefer the
+# higher-level `Magic` wrapper for ordinary use; use `LibMagic` when you need
+# an exact C function, raw constant, or custom ownership pattern.
 @[Link("magic")]
 lib LibMagic
   MAGIC_NONE             = 0x0000000
@@ -49,30 +54,63 @@ lib LibMagic
   MAGIC_PARAM_ELF_SHSIZE_MAX = 8
   MAGIC_PARAM_MAGWARN_MAX    = 9
 
+  # Opaque libmagic handle type returned by `magic_open`.
   alias Handle = Void*
 
+  # Allocates a new libmagic handle with the given flag bitmask.
   fun magic_open(flags : LibC::Int) : Handle
+
+  # Releases a handle returned by `magic_open`.
   fun magic_close(cookie : Handle) : Void
 
+  # Resolves the path libmagic would use for a magic database.
   fun magic_getpath(magicfile : LibC::Char*, action : LibC::Int) : LibC::Char*
+
+  # Identifies the file at *filename*.
   fun magic_file(cookie : Handle, filename : LibC::Char*) : LibC::Char*
+
+  # Identifies the data available from an open file descriptor.
   fun magic_descriptor(cookie : Handle, fd : LibC::Int) : LibC::Char*
+
+  # Identifies the given memory buffer.
   fun magic_buffer(cookie : Handle, buffer : Void*, length : LibC::SizeT) : LibC::Char*
 
+  # Returns the last error message for *cookie*, or null if none is available.
   fun magic_error(cookie : Handle) : LibC::Char*
+
+  # Returns the current flag bitmask for *cookie*.
   fun magic_getflags(cookie : Handle) : LibC::Int
+
+  # Replaces the current flag bitmask for *cookie*.
   fun magic_setflags(cookie : Handle, flags : LibC::Int) : LibC::Int
 
+  # Returns the linked libmagic version number.
   fun magic_version : LibC::Int
+
+  # Loads the default database or the colon-separated database path list.
   fun magic_load(cookie : Handle, filename : LibC::Char*) : LibC::Int
+
+  # Loads one or more magic databases from memory buffers.
   fun magic_load_buffers(cookie : Handle, buffers : Void**, sizes : LibC::SizeT*, nbuffers : LibC::SizeT) : LibC::Int
 
+  # Compiles the default database or the colon-separated database path list.
   fun magic_compile(cookie : Handle, filename : LibC::Char*) : LibC::Int
+
+  # Checks the default database or the colon-separated database path list.
   fun magic_check(cookie : Handle, filename : LibC::Char*) : LibC::Int
+
+  # Prints database entries in a human-readable format.
   fun magic_list(cookie : Handle, filename : LibC::Char*) : LibC::Int
+
+  # Returns the last operating system errno reported by libmagic.
   fun magic_errno(cookie : Handle) : LibC::Int
 
+  # Sets a numeric libmagic resource limit.
   fun magic_setparam(cookie : Handle, param : LibC::Int, value : Void*) : LibC::Int
+
+  # Reads a numeric libmagic resource limit.
   fun magic_getparam(cookie : Handle, param : LibC::Int, value : Void*) : LibC::Int
+
+  # Returns the maximum supported value for a libmagic parameter.
   fun magic_getmaxparam(param : LibC::Int) : LibC::SSizeT
 end

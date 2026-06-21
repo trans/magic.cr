@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  spec:
+    name: Spec / Crystal ${{ matrix.crystal }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        crystal:
+          - 1.16.0
+          - latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install libmagic
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagic-dev
+
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: ${{ matrix.crystal }}
+
+      - name: Show tool versions
+        run: |
+          crystal --version
+          pkg-config --modversion libmagic
+
+      - name: Install shards
+        run: shards install
+
+      - name: Run specs
+        run: crystal spec
+
+  docs:
+    name: API docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install libmagic
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmagic-dev
+
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: latest
+
+      - name: Build API docs
+        run: |
+          version="$(awk '/^version:/ {print $2}' shard.yml)"
+          crystal docs --project-name=magic --project-version="$version" --output=docs/api
