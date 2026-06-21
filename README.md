@@ -8,7 +8,7 @@ the raw C API through `LibMagic` when you need direct access.
 
 ## Requirements
 
-- Crystal `>= 1.20.2`
+- Crystal `>= 1.16.0`
 - `libmagic`
 - The libmagic development headers
 
