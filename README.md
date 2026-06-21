@@ -36,7 +36,7 @@ Add the shard to your `shard.yml`:
 dependencies:
   magic:
     github: trans/magic.cr
-    version: ~> 0.1.0
+    version: ~> 0.1.1
 ```
 
 Then install dependencies:

@@ -1,7 +1,7 @@
 require "./lib_magic"
 
 module Magic
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   @[Flags]
   enum Flag
