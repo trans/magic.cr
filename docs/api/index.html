@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.20.2">
+<meta name="crystal_docs.project_version" content="0.1.1">
+<meta name="crystal_docs.project_name" content="magic">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="magic">
+  <title>magic 0.1.1</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          magic
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.1
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="magic/Magic" data-name="magic">
+      <a href="Magic.html">Magic</a>
+      
+        <ul>
+  
+  <li class=" " data-id="magic/Magic/Database" data-name="magic::database">
+      <a href="Magic/Database.html">Database</a>
+      
+    </li>
+  
+  <li class=" " data-id="magic/Magic/Error" data-name="magic::error">
+      <a href="Magic/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="magic/Magic/Flag" data-name="magic::flag">
+      <a href="Magic/Flag.html">Flag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="magic.cr" class="anchor" href="#magic.cr">  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>magic.cr</h1>
+<p>Crystal bindings for <code>libmagic</code>, the library used by the Unix <code>file</code> command
+to identify file types from their contents.</p>
+<p>The shard provides a small Crystal-friendly wrapper for common use and exposes
+the raw C API through <code>LibMagic</code> when you need direct access.</p>
+<h2><a id="requirements" class="anchor" href="#requirements">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Requirements</h2>
+<ul>
+<li>Crystal <code>&gt;= 1.16.0</code></li>
+<li><code>libmagic</code></li>
+<li>The libmagic development headers</li>
+</ul>
+<p>Install libmagic before building applications that depend on this shard:</p>
+<pre><code class="language-sh"># Debian/Ubuntu
+sudo apt install libmagic-dev
+
+# Fedora
+sudo dnf install file-devel
+
+# Arch
+sudo pacman -S file
+
+# macOS
+brew install libmagic</code></pre>
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+<p>Add the shard to your <code>shard.yml</code>:</p>
+<pre><code class="language-yaml">dependencies:
+  magic:
+    github: trans/magic.cr
+    version: ~&gt; 0.1.1</code></pre>
+<p>Then install dependencies:</p>
+<pre><code class="language-sh">shards install</code></pre>
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;magic&quot;</span>
+
+puts <span class="t">Magic</span>.file(<span class="s">&quot;README.md&quot;</span>)
+<span class="c"># =&gt; ASCII text</span>
+
+puts <span class="t">Magic</span>.file(<span class="s">&quot;README.md&quot;</span>, <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span>)
+<span class="c"># =&gt; text/plain</span>
+
+puts <span class="t">Magic</span>.buffer(<span class="s">&quot;hello\n&quot;</span>)
+<span class="c"># =&gt; ASCII text</span></code></pre>
+<p>For repeated lookups, keep a database handle open:</p>
+<pre><code class="language-crystal"><span class="t">Magic</span>.open <span class="k">do</span> <span class="o">|</span>magic<span class="o">|</span>
+  puts magic.file(<span class="s">&quot;README.md&quot;</span>)
+  puts magic.buffer(<span class="s">&quot;hello\n&quot;</span>)
+<span class="k">end</span></code></pre>
+<p>You can pass libmagic flags when opening a handle:</p>
+<pre><code class="language-crystal"><span class="t">Magic</span>.open(<span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span> <span class="o">|</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">Symlink</span>) <span class="k">do</span> <span class="o">|</span>magic<span class="o">|</span>
+  puts magic.file(<span class="s">&quot;README.md&quot;</span>)
+<span class="k">end</span></code></pre>
+<p>Or use a one-shot helper:</p>
+<pre><code class="language-crystal">mime_type <span class="o">=</span> <span class="t">Magic</span>.file(<span class="s">&quot;README.md&quot;</span>, <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span>)</code></pre>
+<h2><a id="api" class="anchor" href="#api">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>API</h2>
+<h3><a id="one-shot-helpers" class="anchor" href="#one-shot-helpers">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>One-shot helpers</h3>
+<pre><code class="language-crystal"><span class="t">Magic</span>.file(path, flags <span class="o">=</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">None</span>, database <span class="o">=</span> <span class="n">nil</span>)
+<span class="t">Magic</span>.buffer(bytes, flags <span class="o">=</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">None</span>, database <span class="o">=</span> <span class="n">nil</span>)
+<span class="t">Magic</span>.buffer(string, flags <span class="o">=</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">None</span>, database <span class="o">=</span> <span class="n">nil</span>)
+<span class="t">Magic</span>.version</code></pre>
+<p>These helpers open libmagic, load the database, run one lookup, and close the
+handle.</p>
+<h3><a id="reusable-database-handle" class="anchor" href="#reusable-database-handle">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Reusable database handle</h3>
+<pre><code class="language-crystal">magic <span class="o">=</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Database</span>.open(<span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span>)
+magic.file(<span class="s">&quot;README.md&quot;</span>)
+magic.buffer(<span class="s">&quot;hello\n&quot;</span>)
+magic.descriptor(fd)
+magic.close</code></pre>
+<p>Prefer the block form so the handle is always closed:</p>
+<pre><code class="language-crystal"><span class="t">Magic</span><span class="t">::</span><span class="t">Database</span>.open(<span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span>) <span class="k">do</span> <span class="o">|</span>magic<span class="o">|</span>
+  puts magic.file(<span class="s">&quot;README.md&quot;</span>)
+<span class="k">end</span></code></pre>
+<p>A custom magic database path can be passed as the second argument:</p>
+<pre><code class="language-crystal"><span class="t">Magic</span>.open(<span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">None</span>, <span class="s">&quot;/path/to/magic.mgc&quot;</span>) <span class="k">do</span> <span class="o">|</span>magic<span class="o">|</span>
+  puts magic.file(<span class="s">&quot;sample.bin&quot;</span>)
+<span class="k">end</span></code></pre>
+<h3><a id="flags" class="anchor" href="#flags">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Flags</h3>
+<p><code><a href="Magic/Flag.html">Magic::Flag</a></code> maps the libmagic flags into a Crystal flags enum. Common values
+include:</p>
+<ul>
+<li><code><a href="Magic/Flag.html#MimeType">Magic::Flag::MimeType</a></code></li>
+<li><code><a href="Magic/Flag.html#MimeEncoding">Magic::Flag::MimeEncoding</a></code></li>
+<li><code><a href="Magic/Flag.html#Mime">Magic::Flag::Mime</a></code></li>
+<li><code><a href="Magic/Flag.html#Symlink">Magic::Flag::Symlink</a></code></li>
+<li><code><a href="Magic/Flag.html#Compress">Magic::Flag::Compress</a></code></li>
+<li><code><a href="Magic/Flag.html#Error">Magic::Flag::Error</a></code></li>
+<li><code><a href="Magic/Flag.html#Extension">Magic::Flag::Extension</a></code></li>
+</ul>
+<p>Flags can be combined with <code>|</code>:</p>
+<pre><code class="language-crystal">flags <span class="o">=</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span> <span class="o">|</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">Error</span>
+puts <span class="t">Magic</span>.file(<span class="s">&quot;README.md&quot;</span>, flags)</code></pre>
+<h2><a id="errors" class="anchor" href="#errors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Errors</h2>
+<p>libmagic failures raise <code><a href="Magic/Error.html">Magic::Error</a></code>:</p>
+<pre><code class="language-crystal"><span class="k">begin</span>
+  <span class="t">Magic</span>.file(<span class="s">&quot;missing.file&quot;</span>, <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">Error</span>)
+<span class="k">rescue</span> error : <span class="t">Magic</span><span class="t">::</span><span class="t">Error</span>
+  puts error.message
+  puts error.errno
+<span class="k">end</span></code></pre>
+<h2><a id="raw-lib-magic-api" class="anchor" href="#raw-lib-magic-api">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Raw LibMagic API</h2>
+<p>The low-level binding is available as <code>LibMagic</code>:</p>
+<pre><code class="language-crystal">handle <span class="o">=</span> <span class="t">LibMagic</span>.magic_open(<span class="t">LibMagic</span><span class="t">::</span><span class="t">MAGIC_MIME_TYPE</span>)
+<span class="t">LibMagic</span>.magic_load(handle, <span class="t">Pointer</span>(<span class="t">LibC</span><span class="t">::</span><span class="t">Char</span>).null)
+puts <span class="t">String</span>.new(<span class="t">LibMagic</span>.magic_file(handle, <span class="s">&quot;README.md&quot;</span>))
+<span class="t">LibMagic</span>.magic_close(handle)</code></pre>
+<p>Use this layer when you need a libmagic function that the wrapper does not
+abstract.</p>
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+<p>Run the specs:</p>
+<pre><code class="language-sh">CRYSTAL_CACHE_DIR=/tmp/crystal-cache crystal spec</code></pre>
+<p>Format source and specs:</p>
+<pre><code class="language-sh">crystal tool format src spec</code></pre>
+<h2><a id="license" class="anchor" href="#license">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>License</h2>
+<p>MIT. See <a href="LICENSE">LICENSE</a>.</p>
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+<ul>
+<li><a href="https://github.com/trans">Thomas Sawyer</a> - creator and maintainer</li>
+</ul>
+</div>
+</body>
+</html>

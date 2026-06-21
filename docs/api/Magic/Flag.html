@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.20.2">
+<meta name="crystal_docs.project_version" content="0.1.1">
+<meta name="crystal_docs.project_name" content="magic">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="magic">
+  <title>Magic::Flag - magic 0.1.1</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          magic
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.1
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="magic/Magic" data-name="magic">
+      <a href="../Magic.html">Magic</a>
+      
+        <ul>
+  
+  <li class=" " data-id="magic/Magic/Database" data-name="magic::database">
+      <a href="../Magic/Database.html">Database</a>
+      
+    </li>
+  
+  <li class=" " data-id="magic/Magic/Error" data-name="magic::error">
+      <a href="../Magic/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" current" data-id="magic/Magic/Flag" data-name="magic::flag">
+      <a href="../Magic/Flag.html">Flag</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    enum
+  </span> Magic::<wbr>Flag
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Flags that control libmagic lookup behavior.</p>
+<p>The enum maps directly to the <code>MAGIC_*</code> constants from libmagic. Values can
+be combined with <code>|</code>.</p>
+<pre><code class="language-crystal">flags <span class="o">=</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">MimeType</span> <span class="o">|</span> <span class="t">Magic</span><span class="t">::</span><span class="t">Flag</span><span class="t">::</span><span class="t">Error</span>
+puts <span class="t">Magic</span>.file(<span class="s">&quot;README.md&quot;</span>, flags)</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      magic.cr
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="enum-members" class="anchor" href="#enum-members">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Enum Members
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="None">
+        <strong>None</strong> = <code><span class="n">0</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>No special lookup behavior.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Debug">
+        <strong>Debug</strong> = <code><span class="n">1</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Print debugging information to stderr.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Symlink">
+        <strong>Symlink</strong> = <code><span class="n">2</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Follow symlinks.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Compress">
+        <strong>Compress</strong> = <code><span class="n">4</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Inspect compressed files by decompressing their contents.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Devices">
+        <strong>Devices</strong> = <code><span class="n">8</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Inspect block and character devices.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="MimeType">
+        <strong>MimeType</strong> = <code><span class="n">16</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Return a MIME type, such as <code>text/plain</code>.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Continue">
+        <strong>Continue</strong> = <code><span class="n">32</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Return all matches instead of only the first match.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Check">
+        <strong>Check</strong> = <code><span class="n">64</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Check magic database consistency and print warnings to stderr.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="PreserveAtime">
+        <strong>PreserveAtime</strong> = <code><span class="n">128</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Try to preserve file access times where supported.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Raw">
+        <strong>Raw</strong> = <code><span class="n">256</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not escape unprintable characters.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Error">
+        <strong>Error</strong> = <code><span class="n">512</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Treat filesystem errors as lookup errors.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="MimeEncoding">
+        <strong>MimeEncoding</strong> = <code><span class="n">1024</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Return the MIME encoding, such as <code>us-ascii</code>.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Mime">
+        <strong>Mime</strong> = <code><span class="n">1040</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Return MIME type and MIME encoding.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Apple">
+        <strong>Apple</strong> = <code><span class="n">2048</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Return Apple creator and type information.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="Extension">
+        <strong>Extension</strong> = <code><span class="n">16777216</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Return slash-separated file extensions.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="CompressTransp">
+        <strong>CompressTransp</strong> = <code><span class="n">33554432</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Inspect compressed files without reporting the compression wrapper.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCompressFork">
+        <strong>NoCompressFork</strong> = <code><span class="n">67108864</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Disable decompressors that require forking.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoDesc">
+        <strong>NoDesc</strong> = <code><span class="n">16780304</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Suppress descriptive output classes.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckCompress">
+        <strong>NoCheckCompress</strong> = <code><span class="n">4096</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect compressed data.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckTar">
+        <strong>NoCheckTar</strong> = <code><span class="n">8192</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect tar files.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckSoft">
+        <strong>NoCheckSoft</strong> = <code><span class="n">16384</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not consult magic database entries.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckApptype">
+        <strong>NoCheckApptype</strong> = <code><span class="n">32768</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not check application type.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckElf">
+        <strong>NoCheckElf</strong> = <code><span class="n">65536</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect ELF details.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckText">
+        <strong>NoCheckText</strong> = <code><span class="n">131072</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not run text-file checks.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckCdf">
+        <strong>NoCheckCdf</strong> = <code><span class="n">262144</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect CDF / Microsoft compound document data.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckCsv">
+        <strong>NoCheckCsv</strong> = <code><span class="n">524288</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect CSV data.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckTokens">
+        <strong>NoCheckTokens</strong> = <code><span class="n">1048576</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect known tokens in text data.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckEncoding">
+        <strong>NoCheckEncoding</strong> = <code><span class="n">2097152</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect text encodings.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckJson">
+        <strong>NoCheckJson</strong> = <code><span class="n">4194304</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect JSON data.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckSimh">
+        <strong>NoCheckSimh</strong> = <code><span class="n">8388608</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Do not inspect SIMH tape data.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="NoCheckBuiltin">
+        <strong>NoCheckBuiltin</strong> = <code><span class="n">16756736</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Disable built-in checks while still allowing database checks.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="All">
+        <strong>All</strong> = <code><span class="n">134217727</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#apple%3F-instance-method" class="signature"><strong>#apple?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Apple">Apple</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#check%3F-instance-method" class="signature"><strong>#check?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Check">Check</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compress%3F-instance-method" class="signature"><strong>#compress?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Compress">Compress</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compress_transp%3F-instance-method" class="signature"><strong>#compress_transp?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#CompressTransp">CompressTransp</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#continue%3F-instance-method" class="signature"><strong>#continue?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Continue">Continue</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#debug%3F-instance-method" class="signature"><strong>#debug?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Debug">Debug</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#devices%3F-instance-method" class="signature"><strong>#devices?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Devices">Devices</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#error%3F-instance-method" class="signature"><strong>#error?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Error">Error</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#extension%3F-instance-method" class="signature"><strong>#extension?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Extension">Extension</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mime%3F-instance-method" class="signature"><strong>#mime?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Mime">Mime</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mime_encoding%3F-instance-method" class="signature"><strong>#mime_encoding?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#MimeEncoding">MimeEncoding</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mime_type%3F-instance-method" class="signature"><strong>#mime_type?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#MimeType">MimeType</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_apptype%3F-instance-method" class="signature"><strong>#no_check_apptype?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckApptype">NoCheckApptype</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_builtin%3F-instance-method" class="signature"><strong>#no_check_builtin?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckBuiltin">NoCheckBuiltin</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_cdf%3F-instance-method" class="signature"><strong>#no_check_cdf?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckCdf">NoCheckCdf</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_compress%3F-instance-method" class="signature"><strong>#no_check_compress?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckCompress">NoCheckCompress</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_csv%3F-instance-method" class="signature"><strong>#no_check_csv?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckCsv">NoCheckCsv</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_elf%3F-instance-method" class="signature"><strong>#no_check_elf?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckElf">NoCheckElf</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_encoding%3F-instance-method" class="signature"><strong>#no_check_encoding?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckEncoding">NoCheckEncoding</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_json%3F-instance-method" class="signature"><strong>#no_check_json?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckJson">NoCheckJson</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_simh%3F-instance-method" class="signature"><strong>#no_check_simh?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckSimh">NoCheckSimh</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_soft%3F-instance-method" class="signature"><strong>#no_check_soft?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckSoft">NoCheckSoft</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_tar%3F-instance-method" class="signature"><strong>#no_check_tar?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckTar">NoCheckTar</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_text%3F-instance-method" class="signature"><strong>#no_check_text?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckText">NoCheckText</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_check_tokens%3F-instance-method" class="signature"><strong>#no_check_tokens?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckTokens">NoCheckTokens</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_compress_fork%3F-instance-method" class="signature"><strong>#no_compress_fork?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCompressFork">NoCompressFork</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no_desc%3F-instance-method" class="signature"><strong>#no_desc?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoDesc">NoDesc</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#none%3F-instance-method" class="signature"><strong>#none?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#None">None</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#preserve_atime%3F-instance-method" class="signature"><strong>#preserve_atime?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#PreserveAtime">PreserveAtime</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw%3F-instance-method" class="signature"><strong>#raw?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Raw">Raw</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#symlink%3F-instance-method" class="signature"><strong>#symlink?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Symlink">Symlink</a></code></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="apple?-instance-method">
+      <div class="signature">
+        
+        def <strong>apple?</strong>
+
+        <a class="method-permalink" href="#apple%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Apple">Apple</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="check?-instance-method">
+      <div class="signature">
+        
+        def <strong>check?</strong>
+
+        <a class="method-permalink" href="#check%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Check">Check</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compress?-instance-method">
+      <div class="signature">
+        
+        def <strong>compress?</strong>
+
+        <a class="method-permalink" href="#compress%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Compress">Compress</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compress_transp?-instance-method">
+      <div class="signature">
+        
+        def <strong>compress_transp?</strong>
+
+        <a class="method-permalink" href="#compress_transp%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#CompressTransp">CompressTransp</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="continue?-instance-method">
+      <div class="signature">
+        
+        def <strong>continue?</strong>
+
+        <a class="method-permalink" href="#continue%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Continue">Continue</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="debug?-instance-method">
+      <div class="signature">
+        
+        def <strong>debug?</strong>
+
+        <a class="method-permalink" href="#debug%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Debug">Debug</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="devices?-instance-method">
+      <div class="signature">
+        
+        def <strong>devices?</strong>
+
+        <a class="method-permalink" href="#devices%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Devices">Devices</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="error?-instance-method">
+      <div class="signature">
+        
+        def <strong>error?</strong>
+
+        <a class="method-permalink" href="#error%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Error">Error</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="extension?-instance-method">
+      <div class="signature">
+        
+        def <strong>extension?</strong>
+
+        <a class="method-permalink" href="#extension%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Extension">Extension</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mime?-instance-method">
+      <div class="signature">
+        
+        def <strong>mime?</strong>
+
+        <a class="method-permalink" href="#mime%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Mime">Mime</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mime_encoding?-instance-method">
+      <div class="signature">
+        
+        def <strong>mime_encoding?</strong>
+
+        <a class="method-permalink" href="#mime_encoding%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#MimeEncoding">MimeEncoding</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mime_type?-instance-method">
+      <div class="signature">
+        
+        def <strong>mime_type?</strong>
+
+        <a class="method-permalink" href="#mime_type%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#MimeType">MimeType</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_apptype?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_apptype?</strong>
+
+        <a class="method-permalink" href="#no_check_apptype%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckApptype">NoCheckApptype</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_builtin?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_builtin?</strong>
+
+        <a class="method-permalink" href="#no_check_builtin%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckBuiltin">NoCheckBuiltin</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_cdf?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_cdf?</strong>
+
+        <a class="method-permalink" href="#no_check_cdf%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckCdf">NoCheckCdf</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_compress?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_compress?</strong>
+
+        <a class="method-permalink" href="#no_check_compress%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckCompress">NoCheckCompress</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_csv?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_csv?</strong>
+
+        <a class="method-permalink" href="#no_check_csv%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckCsv">NoCheckCsv</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_elf?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_elf?</strong>
+
+        <a class="method-permalink" href="#no_check_elf%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckElf">NoCheckElf</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_encoding?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_encoding?</strong>
+
+        <a class="method-permalink" href="#no_check_encoding%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckEncoding">NoCheckEncoding</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_json?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_json?</strong>
+
+        <a class="method-permalink" href="#no_check_json%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckJson">NoCheckJson</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_simh?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_simh?</strong>
+
+        <a class="method-permalink" href="#no_check_simh%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckSimh">NoCheckSimh</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_soft?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_soft?</strong>
+
+        <a class="method-permalink" href="#no_check_soft%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckSoft">NoCheckSoft</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_tar?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_tar?</strong>
+
+        <a class="method-permalink" href="#no_check_tar%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckTar">NoCheckTar</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_text?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_text?</strong>
+
+        <a class="method-permalink" href="#no_check_text%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckText">NoCheckText</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_check_tokens?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_check_tokens?</strong>
+
+        <a class="method-permalink" href="#no_check_tokens%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCheckTokens">NoCheckTokens</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_compress_fork?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_compress_fork?</strong>
+
+        <a class="method-permalink" href="#no_compress_fork%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoCompressFork">NoCompressFork</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no_desc?-instance-method">
+      <div class="signature">
+        
+        def <strong>no_desc?</strong>
+
+        <a class="method-permalink" href="#no_desc%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#NoDesc">NoDesc</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="none?-instance-method">
+      <div class="signature">
+        
+        def <strong>none?</strong>
+
+        <a class="method-permalink" href="#none%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#None">None</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="preserve_atime?-instance-method">
+      <div class="signature">
+        
+        def <strong>preserve_atime?</strong>
+
+        <a class="method-permalink" href="#preserve_atime%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#PreserveAtime">PreserveAtime</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw?-instance-method">
+      <div class="signature">
+        
+        def <strong>raw?</strong>
+
+        <a class="method-permalink" href="#raw%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Raw">Raw</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="symlink?-instance-method">
+      <div class="signature">
+        
+        def <strong>symlink?</strong>
+
+        <a class="method-permalink" href="#symlink%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if this enum value contains <code><a href="../Magic/Flag.html#Symlink">Symlink</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>
